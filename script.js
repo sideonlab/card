@@ -1,8 +1,12 @@
 document.addEventListener('DOMContentLoaded', function() {
     const card = document.querySelector('.business-card');
     
-    // 카드 클릭 시 뒤집기
-    card.addEventListener('click', function() {
+    // 카드 클릭 시 뒤집기 (링크 클릭 시에는 뒤집지 않음)
+    card.addEventListener('click', function(e) {
+        // 클릭된 요소가 링크(a 태그)이거나 그 자식 요소인 경우 뒤집지 않음
+        if (e.target.closest('a')) {
+            return;
+        }
         card.classList.toggle('flipped');
     });
     
