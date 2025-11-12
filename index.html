@@ -3,92 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>내 웹 명함 - Vibe Card</title>
+    <title>김태헌 - 웹 명함</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="card-container">
-        <div class="business-card" id="business-card">
+        <div class="business-card">
             <div class="card-front">
-                <div class="character-avatar">
+                <div class="character">
                     <div class="face">
+                        <div class="hair"></div>
                         <div class="eyes">
                             <div class="eye left-eye">
-                                <div class="eyeball"></div>
+                                <div class="pupil"></div>
                             </div>
                             <div class="eye right-eye">
-                                <div class="eyeball"></div>
+                                <div class="pupil"></div>
                             </div>
                         </div>
                         <div class="nose"></div>
                         <div class="mouth"></div>
-                        <div class="blush left-blush"></div>
-                        <div class="blush right-blush"></div>
+                        <div class="cheeks">
+                            <div class="cheek left-cheek"></div>
+                            <div class="cheek right-cheek"></div>
+                        </div>
                     </div>
-                    <div class="hair"></div>
                 </div>
-                
                 <div class="info-section">
                     <h1 class="name">김태헌</h1>
-                    <h2 class="job-title">SideOnAI 대표</h2>
-                    <p class="bio">AI와 함께 놀고 있습니다. 같이 노실 분? 🤖</p>
-                    
-                    <div class="contact-info">
-                        <div class="contact-item">
-                            <span class="icon">📧</span>
-                            <span>kim.taeheon@sideonai.com</span>
-                        </div>
-                        <div class="contact-item">
-                            <span class="icon">🌐</span>
-                            <span>www.sideonai.com</span>
-                        </div>
-                        <div class="contact-item">
-                            <span class="icon">🤖</span>
-                            <span>SideOnAI</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="decoration">
-                    <div class="sparkle sparkle-1">✨</div>
-                    <div class="sparkle sparkle-2">⭐</div>
-                    <div class="sparkle sparkle-3">💫</div>
+                    <p class="title">SideOnAI 대표</p>
+                    <p class="intro">"AI와 함께 놀고 있습니다. 같이 노실 분?"</p>
                 </div>
             </div>
-            
-            <div class="card-back hidden">
-                <div class="skills-section">
-                    <h3>Skills</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">HTML/CSS</span>
-                        <span class="skill-tag">JavaScript</span>
-                        <span class="skill-tag">React</span>
-                        <span class="skill-tag">Vue.js</span>
-                        <span class="skill-tag">TypeScript</span>
+            <div class="card-back">
+                <div class="contact-info">
+                    <h2>연락처</h2>
+                    <div class="contact-item">
+                        <span class="icon">📧</span>
+                        <a href="mailto:th@sideonai.com">th@sideonai.com</a>
+                    </div>
+                    <div class="contact-item">
+                        <span class="icon">📱</span>
+                        <a href="tel:010-1111-1111">010-1111-1111</a>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://www.youtube.com/@ai-study" target="_blank" rel="noopener noreferrer" class="social-btn youtube-btn">
+                            <span class="icon">▶️</span>
+                            <span>YouTube</span>
+                        </a>
+                        <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" class="social-btn linkedin-btn">
+                            <span class="icon">💼</span>
+                            <span>LinkedIn</span>
+                        </a>
                     </div>
                 </div>
-                
-                <div class="quote-section">
-                    <blockquote>
-                        "코드로 세상을 더 아름답게 만들고 싶습니다"
-                    </blockquote>
-                </div>
-                
-                <button class="flip-button" onclick="flipCard()">뒷면 보기</button>
             </div>
-            
-            <button class="flip-button front-flip" onclick="flipCard()">뒷면 보기</button>
-        </div>
-        
-        <div class="download-section">
-            <button class="download-button" onclick="downloadBusinessCard()">
-                <span class="download-icon">📥</span>
-                명함 이미지 다운로드
-            </button>
         </div>
     </div>
-    
-    <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
+
