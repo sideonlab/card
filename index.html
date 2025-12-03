@@ -7,37 +7,30 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="card-container">
-        <div class="business-card">
-            <div class="card-front">
-                <div class="character">
-                    <div class="face">
-                        <div class="hair"></div>
-                        <div class="eyes">
-                            <div class="eye left-eye">
-                                <div class="pupil"></div>
-                            </div>
-                            <div class="eye right-eye">
-                                <div class="pupil"></div>
-                            </div>
-                        </div>
-                        <div class="nose"></div>
-                        <div class="mouth"></div>
-                        <div class="cheeks">
-                            <div class="cheek left-cheek"></div>
-                            <div class="cheek right-cheek"></div>
-                        </div>
+    <div class="business-card">
+        <div class="card-content">
+            <div class="character-face">
+                <div class="face">
+                    <div class="hair"></div>
+                    <div class="glasses">
+                        <div class="glass left-glass"></div>
+                        <div class="glass right-glass"></div>
+                        <div class="bridge"></div>
                     </div>
-                </div>
-                <div class="info-section">
-                    <h1 class="name">김태헌</h1>
-                    <p class="title">SideOnAI 대표</p>
-                    <p class="intro">"AI와 함께 놀고 있습니다. 같이 노실 분?"</p>
+                    <div class="eye left-eye"></div>
+                    <div class="eye right-eye"></div>
+                    <div class="nose"></div>
+                    <div class="mouth"></div>
+                    <div class="tie"></div>
                 </div>
             </div>
-            <div class="card-back">
+            
+            <div class="info-section">
+                <h1 class="name">김태헌</h1>
+                <p class="job">SideOnAI 대표</p>
+                <p class="intro">"AI와 함께 놀고 있습니다. 같이 노실 분?"</p>
+                
                 <div class="contact-info">
-                    <h2>연락처</h2>
                     <div class="contact-item">
                         <span class="icon">📧</span>
                         <a href="mailto:th@sideonai.com">th@sideonai.com</a>
@@ -46,20 +39,21 @@
                         <span class="icon">📱</span>
                         <a href="tel:010-1111-1111">010-1111-1111</a>
                     </div>
-                    <div class="social-links">
-                        <a href="https://www.youtube.com/@ai-study" target="_blank" rel="noopener noreferrer" class="social-btn youtube-btn">
-                            <span class="icon">▶️</span>
-                            <span>YouTube</span>
-                        </a>
-                        <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" class="social-btn linkedin-btn">
-                            <span class="icon">💼</span>
-                            <span>LinkedIn</span>
-                        </a>
+                    <div class="contact-item linkedin-item">
+                        <span class="icon">💼</span>
+                        <a href="https://www.linkedin.com/" target="_blank">LinkedIn</a>
+                    </div>
+                    <div class="contact-item youtube-item">
+                        <span class="icon">📺</span>
+                        <a href="https://www.youtube.com/@ai-study" target="_blank">YouTube</a>
                     </div>
                 </div>
             </div>
         </div>
+        
+        <div class="decoration"></div>
     </div>
+    
     <script src="script.js"></script>
 </body>
 </html>

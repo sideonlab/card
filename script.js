@@ -1,57 +1,54 @@
+// 페이지 로드 시 애니메이션 효과
 document.addEventListener('DOMContentLoaded', function() {
     const card = document.querySelector('.business-card');
+    const character = document.querySelector('.character-face');
     
-    // 카드 클릭 시 뒤집기 (링크 클릭 시에는 뒤집지 않음)
-    card.addEventListener('click', function(e) {
-        // 클릭된 요소가 링크(a 태그)이거나 그 자식 요소인 경우 뒤집지 않음
-        if (e.target.closest('a')) {
-            return;
-        }
-        card.classList.toggle('flipped');
+    // 카드에 마우스 오버 시 약간의 회전 효과
+    card.addEventListener('mouseenter', function() {
+        this.style.transform = 'rotateY(5deg) rotateX(5deg)';
+        this.style.transition = 'transform 0.3s ease';
     });
     
-    // 키보드 이벤트 (스페이스바로 뒤집기)
-    document.addEventListener('keydown', function(e) {
-        if (e.code === 'Space') {
-            e.preventDefault();
-            card.classList.toggle('flipped');
-        }
+    card.addEventListener('mouseleave', function() {
+        this.style.transform = 'rotateY(0deg) rotateX(0deg)';
     });
     
-    // 눈동자 움직임 효과
-    const pupils = document.querySelectorAll('.pupil');
-    const face = document.querySelector('.face');
-    
-    if (face) {
-        face.addEventListener('mousemove', function(e) {
-            const rect = face.getBoundingClientRect();
-            const x = e.clientX - rect.left - rect.width / 2;
-            const y = e.clientY - rect.top - rect.height / 2;
-            
-            pupils.forEach(pupil => {
-                const eye = pupil.parentElement;
-                const eyeRect = eye.getBoundingClientRect();
-                const eyeCenterX = eyeRect.left + eyeRect.width / 2;
-                const eyeCenterY = eyeRect.top + eyeRect.height / 2;
-                
-                const deltaX = e.clientX - eyeCenterX;
-                const deltaY = e.clientY - eyeCenterY;
-                
-                const distance = Math.min(Math.sqrt(deltaX * deltaX + deltaY * deltaY), 5);
-                const angle = Math.atan2(deltaY, deltaX);
-                
-                const moveX = Math.cos(angle) * distance;
-                const moveY = Math.sin(angle) * distance;
-                
-                pupil.style.transform = `translate(calc(-50% + ${moveX}px), calc(-50% + ${moveY}px))`;
-            });
-        });
+    // 캐릭터 클릭 시 인사 애니메이션
+    character.addEventListener('click', function() {
+        const face = this.querySelector('.face');
+        face.style.animation = 'wave 0.5s ease';
         
-        face.addEventListener('mouseleave', function() {
-            pupils.forEach(pupil => {
-                pupil.style.transform = 'translate(-50%, -50%)';
-            });
+        setTimeout(() => {
+            face.style.animation = 'float 3s ease-in-out infinite';
+        }, 500);
+    });
+    
+    // 연락처 항목 클릭 시 피드백
+    const contactItems = document.querySelectorAll('.contact-item');
+    contactItems.forEach(item => {
+        item.addEventListener('click', function() {
+            this.style.transform = 'scale(0.95)';
+            setTimeout(() => {
+                this.style.transform = '';
+            }, 150);
         });
-    }
+    });
 });
+
+// CSS 애니메이션 추가
+const style = document.createElement('style');
+style.textContent = `
+    @keyframes wave {
+        0%, 100% {
+            transform: rotate(0deg);
+        }
+        25% {
+            transform: rotate(-10deg);
+        }
+        75% {
+            transform: rotate(10deg);
+        }
+    }
+`;
+document.head.appendChild(style);
 
